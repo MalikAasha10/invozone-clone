@@ -5,7 +5,8 @@ import ClientLogos from "./components/ClientLogos";
 import Services from "./components/Services";
 import BusinessTypes from "./components/BusinessTypes";
 import EngagementModels from "./components/EngagementModels";
-
+import CTA from "./components/CTA";
+// import Footer from "./components/Footer"; // Uncomment if Footer is implemented
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Services />
       <BusinessTypes />
       <EngagementModels />
-      {/* <CTA /> */}
+      <CTA />
       {/* <Footer /> */}
     </div>
   );
