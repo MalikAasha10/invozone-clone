@@ -134,7 +134,7 @@ const Services = () => {
         </motion.div>
         {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 z-0"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -145,12 +145,12 @@ const Services = () => {
               key={index}
               variants={cardVariants}
               whileHover={{
-                y: -14,
+                y: -8,
                 scale: 1.04,
                 boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
                 transition: { duration: 0.3 }
               }}
-              className="group relative"
+              className="group relative z-10"
             >
               {/* Card Background */}
               <div className="bg-white/10 backdrop-blur-xl p-10 rounded-3xl border border-white/20 h-full relative overflow-hidden transition-all duration-300 group-hover:bg-white/20 shadow-xl">
