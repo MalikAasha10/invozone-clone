@@ -53,6 +53,10 @@ const HeroSection = () => {
 
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Glassmorphism Card Background */}
+      <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
+        <div className="w-full max-w-4xl h-[420px] bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl mx-auto mt-10 mb-10" aria-hidden="true"></div>
+      </div>
       {/* Background Elements */}
       <motion.div
         className="absolute top-20 left-10 text-blue-400/20"
@@ -78,7 +82,7 @@ const HeroSection = () => {
         <Sparkles className="w-6 h-6" />
       </motion.div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
           className="text-center"
           variants={containerVariants}
@@ -90,14 +94,14 @@ const HeroSection = () => {
             className="mb-6"
           >
             <motion.h1 
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+              className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight drop-shadow-xl tracking-tight"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
               Software Development{' '}
               <motion.span 
-                className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x"
                 initial={{ backgroundPosition: "0% 50%" }}
                 animate={{ backgroundPosition: "100% 50%" }}
                 transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
@@ -150,17 +154,18 @@ const HeroSection = () => {
 
           <motion.div variants={itemVariants}>
             <motion.button 
-              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold relative overflow-hidden group"
+              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-10 py-5 rounded-full text-xl font-bold relative overflow-hidden group shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-400/50 transition-all duration-300"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.5 }}
+              aria-label="Start Your Project"
             >
               {/* Button background animation */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"
                 initial={{ scale: 0 }}
                 whileHover={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
@@ -199,7 +204,7 @@ const HeroSection = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.div
-                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2"
+                  className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-1"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ 
@@ -212,7 +217,7 @@ const HeroSection = () => {
                   {stat.number}
                 </motion.div>
                 <motion.p
-                  className="text-gray-400 text-sm uppercase tracking-wider"
+                  className="text-gray-400 text-xs uppercase tracking-wider"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.4, delay: 2 + index * 0.2 }}

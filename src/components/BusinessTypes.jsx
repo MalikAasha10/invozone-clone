@@ -64,18 +64,18 @@ const BusinessTypes = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <motion.h2
-            className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-xl tracking-tight"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -83,7 +83,7 @@ const BusinessTypes = () => {
           >
             Backing You Up At Every Stage Of Your{' '}
             <motion.span
-              className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent animate-gradient-x"
               initial={{ backgroundPosition: "0% 50%" }}
               animate={{ backgroundPosition: "100% 50%" }}
               transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
@@ -93,20 +93,18 @@ const BusinessTypes = () => {
             </motion.span>
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-300 max-w-4xl mx-auto"
+            className="text-2xl text-gray-300 max-w-4xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            From launching startups to expanding enterprises, or recovering from setbacks, 
-            we help businesses overcome every challenge on their journey.
+            From launching startups to expanding enterprises, or recovering from setbacks, we help businesses overcome every challenge on their journey.
           </motion.p>
         </motion.div>
-
         {/* Business Types Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -117,21 +115,22 @@ const BusinessTypes = () => {
               key={index}
               variants={cardVariants}
               whileHover={{
-                y: -15,
-                scale: 1.02,
+                y: -18,
+                scale: 1.05,
+                boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
                 transition: { duration: 0.3 }
               }}
               className="group relative h-full"
             >
-              <div className="bg-slate-700/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/50 h-full relative overflow-hidden transition-all duration-300 group-hover:bg-slate-700/70">
+              <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-10 border border-white/20 h-full relative overflow-hidden transition-all duration-300 group-hover:bg-white/20 shadow-xl">
                 <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${business.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${business.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none`}
                   initial={{ scale: 0, rotate: 180 }}
                   whileHover={{ scale: 1.2, rotate: 0 }}
                   transition={{ duration: 0.6 }}
                 />
                 <motion.div
-                  className={`text-transparent bg-gradient-to-r ${business.gradient} bg-clip-text mb-6 inline-block`}
+                  className={`text-transparent bg-gradient-to-r ${business.gradient} bg-clip-text mb-8 inline-block drop-shadow-lg`}
                   animate={{
                     y: [-5, 5, -5],
                     rotate: [0, 5, -5, 0]
@@ -152,7 +151,7 @@ const BusinessTypes = () => {
                 </motion.div>
                 <div className="relative z-10">
                   <motion.h3
-                    className="text-2xl font-bold text-white mb-2"
+                    className="text-3xl font-bold text-white mb-2"
                     initial={{ opacity: 0.8 }}
                     whileHover={{ opacity: 1 }}
                   >
@@ -166,28 +165,28 @@ const BusinessTypes = () => {
                     </motion.span>
                   </motion.h3>
                   <motion.p
-                    className="text-gray-300 mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300"
+                    className="text-gray-200 mb-8 leading-relaxed group-hover:text-gray-100 transition-colors duration-300 text-lg"
                     initial={{ opacity: 0.7 }}
                     whileHover={{ opacity: 1 }}
                   >
                     {business.description}
                   </motion.p>
                   <motion.div
-                    className="mb-6"
+                    className="mb-8"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                   >
-                    <ul className="space-y-2">
+                    <ul className="space-y-3">
                       {business.features.map((feature, featureIndex) => (
                         <motion.li
                           key={featureIndex}
                           custom={featureIndex}
                           variants={featureVariants}
-                          className="text-sm text-gray-400 flex items-center"
+                          className="text-base text-gray-300 flex items-center"
                         >
                           <motion.div
-                            className={`w-2 h-2 rounded-full bg-gradient-to-r ${business.gradient} mr-3`}
+                            className={`w-2.5 h-2.5 rounded-full bg-gradient-to-r ${business.gradient} mr-3`}
                             animate={{ scale: [1, 1.2, 1] }}
                             transition={{
                               duration: 2,
@@ -201,12 +200,13 @@ const BusinessTypes = () => {
                     </ul>
                   </motion.div>
                   <motion.button
-                    className={`bg-gradient-to-r ${business.gradient} text-white px-6 py-3 rounded-full font-semibold relative overflow-hidden group/btn w-full`}
+                    className={`bg-gradient-to-r ${business.gradient} text-white px-8 py-4 rounded-full font-bold relative overflow-hidden group/btn w-full shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-400/50 transition-all duration-300`}
                     whileHover={{
-                      scale: 1.02,
+                      scale: 1.04,
                       boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)"
                     }}
                     whileTap={{ scale: 0.98 }}
+                    aria-label={business.buttonText}
                   >
                     <motion.div
                       className="absolute inset-0 bg-white/10"
